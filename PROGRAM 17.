@@ -1,0 +1,88 @@
+#include
+#include
+int main()
+{
+int i,j,a[100],max=0,min=1000,mid,n,max1,max2,min1,min2;
+printf("enter the size of the array");
+scanf("%d",&n);
+printf("enter the elements of the array");
+for(i=0;i
+{
+scanf("%d",&a[i]);
+}
+j=n-1;
+int p=0;
+if(p==j)
+{
+max=min=a[p];//wen der is only one element in array
+printf("max is:%d and min is :%d",max,min);
+}
+else if(p==j-1)
+{
+if(a[p]
+{
+max=a[j];
+min=a[p];
+}
+else
+{
+max=a[p];
+min=a[j];
+}
+printf("max is:%d and min is :%d",max,min);
+}
+else
+{
+mid=(int)((p+j)/2);
+for(i=0;i
+{
+if(a[i]>max)
+{
+max=a[i];
+}
+if(a[i]
+{
+min=a[i];
+}
+}
+max1=max;
+min1=min;
+printf("\nmax1 is :%d\n",max1);
+printf("\n min1 is :%d\n",min1);
+max=0;
+min=1000;
+for(i=mid;i
+{
+if(a[i]>max)
+{
+max=a[i];
+}
+if(a[i]
+{
+min=a[i];
+}
+}
+max2=max;
+min2=min;
+printf("\nmax2 is :%d\n",max2);
+printf("\n min2 is :%d\n",min2);
+if(max1
+{
+max=max2;
+}
+else
+max=max1;
+if(min1
+{
+min=min1;
+}
+else
+{
+min=min2;
+}
+printf("\nmaximum is:%d\n",max);
+printf("\n minimun is:%d\n",min);
+}
+getch();
+return 0;
+}
